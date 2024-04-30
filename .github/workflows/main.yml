@@ -37,7 +37,7 @@ jobs:
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: "deployments/deployment.yaml"
-          propertyPath: "spec.template.spec.containers.[0].image"
+          propertyPath: "spec.template.spec.containers.0.image"
           value: arthurutopios/learn-ci-cd-vue:${{ steps.generate-uuid.outputs.uuid }}
           branch: main
           masterBranchName: main
