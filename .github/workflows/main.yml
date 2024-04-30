@@ -44,3 +44,4 @@ jobs:
           commitUserEmail: arthur@utopios.solutions
           targetBranch: main
           message: "Update Image Version to ${{ steps.generate-uuid.outputs.uuid }}"
+          commitChange: false
