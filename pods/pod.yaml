@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vue-js
+  labels:
+    run: vue-js
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    run: vue-js
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vue-js
+spec:
+  selector:
+    matchLabels:
+      run: vue-js
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: vue-js
+    spec:
+      containers:
+      - name: vue-js
+        image: arthurutopios/learn-ci-cd-vue:latest
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+        - name: regcred
+
+
