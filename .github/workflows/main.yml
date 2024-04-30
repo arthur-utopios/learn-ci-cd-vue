@@ -32,6 +32,7 @@ jobs:
         with:
           push: true
           tags: arthurutopios/learn-ci-cd-vue:${{ steps.generate-uuid.outputs.uuid }}
+      - uses: actions/checkout@v4
       - name: Update YAML
         uses: fjogeleit/yaml-update-action@main
         with:
@@ -43,5 +44,5 @@ jobs:
           commitUserName: Arthur
           commitUserEmail: arthur@utopios.solutions
           targetBranch: main
+          createPR: true
           message: "Update Image Version to ${{ steps.generate-uuid.outputs.uuid }}"
-          commitChange: false
