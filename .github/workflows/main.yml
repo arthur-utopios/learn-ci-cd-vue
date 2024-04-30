@@ -35,11 +35,4 @@ jobs:
           valueFile: "deployments/deployment.yaml"
           propertyPath: "spec.template.spec.containers.0.image"
           value: arthurutopios/learn-ci-cd-vue:${{ steps.generate-uuid.outputs.uuid }}
-          branch: deployment/${{ steps.generate-uuid.outputs.uuid }}
-          masterBranchName: main
-          targetBranch: main
-          commitUserName: Arthur
-          commitUserEmail: arthur@utopios.solutions
-          createPR: 'true'
-          message: "Update Image Version to ${{ steps.generate-uuid.outputs.uuid }}"
-          token: ${{ secrets.TOKEN }}
+          commitChange: false
