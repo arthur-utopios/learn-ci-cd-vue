@@ -49,3 +49,11 @@ jobs:
         with:
           push: true
           tags: arthurutopios/learn-ci-cd-vue:${{ steps.generate-uuid.outputs.uuid }}
+      - name: Update YAML
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: './deployments/deployment.yaml'
+          propertyPath: "spec.template.spec.containers.[0].image"
+          value: arthurutopios/learn-ci-cd-vue:${{ steps.generate-uuid.outputs.uuid }}
+          branch: main
+          message: 'Update Image Version to ${{ steps.generate-uuid.outputs.uuid }}' 
