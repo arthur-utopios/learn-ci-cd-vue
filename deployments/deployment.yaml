@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: vue-js
-          image: arthurutopios/learn-ci-cd-vue:67c27fc3-7fc7-50b3-ad54-0e14e8bb1171
+          image: arthurutopios/learn-ci-cd-vue:f5b7e53e-e834-57ae-8b2b-a76d3fcc2fac
           ports:
             - containerPort: 80
       imagePullSecrets:
