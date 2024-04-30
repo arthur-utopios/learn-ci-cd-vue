@@ -46,3 +46,4 @@ jobs:
           targetBranch: main
           createPR: true
           message: "Update Image Version to ${{ steps.generate-uuid.outputs.uuid }}"
+          token: ${{ secrets.TOKEN }}
