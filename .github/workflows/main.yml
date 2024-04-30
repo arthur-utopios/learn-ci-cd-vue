@@ -39,4 +39,8 @@ jobs:
           propertyPath: "spec.template.spec.containers.[0].image"
           value: arthurutopios/learn-ci-cd-vue:${{ steps.generate-uuid.outputs.uuid }}
           branch: main
+          masterBranchName: main
+          commitUserName: Arthur
+          commitUserEmail: arthur@utopios.solutions
+          targetBranch: main
           message: "Update Image Version to ${{ steps.generate-uuid.outputs.uuid }}"
