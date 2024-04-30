@@ -6,27 +6,10 @@ on:
       - main
 
   pull_request:
-    branches: 
-    - main
+    branches:
+      - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4.0.2
-        with:
-          node-version: "20"
-      - name: npm install
-        run: |
-          npm install
-
-      - name: npm build
-        run: npm run build
-
   docker:
     runs-on: ubuntu-latest
     steps:
@@ -52,8 +35,8 @@ jobs:
       - name: Update YAML
         uses: fjogeleit/yaml-update-action@main
         with:
-          valueFile: './deployments/deployment.yaml'
+          valueFile: "./deployments/deployment.yaml"
           propertyPath: "spec.template.spec.containers.[0].image"
           value: arthurutopios/learn-ci-cd-vue:${{ steps.generate-uuid.outputs.uuid }}
           branch: main
-          message: 'Update Image Version to ${{ steps.generate-uuid.outputs.uuid }}' 
+          message: "Update Image Version to ${{ steps.generate-uuid.outputs.uuid }}"
