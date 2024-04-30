@@ -40,6 +40,7 @@ jobs:
           propertyPath: "spec.template.spec.containers.0.image"
           value: arthurutopios/learn-ci-cd-vue:${{ steps.generate-uuid.outputs.uuid }}
           branch: main/${{ steps.generate-uuid.outputs.uuid }}
+          masterBranchName: main
           targetBranch: main
           commitUserName: Arthur
           commitUserEmail: arthur@utopios.solutions
