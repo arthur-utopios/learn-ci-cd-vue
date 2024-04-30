@@ -22,7 +22,7 @@ jobs:
           node-version: '20'
     - name: npm install
       run: |
-        npm ci
+        npm install
 
     - name: npm build
       run: npm run build
@@ -47,4 +47,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: user/app:latest
+          tags: arthurutopios/learn-ci-cd-vue
