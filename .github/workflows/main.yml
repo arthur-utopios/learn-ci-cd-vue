@@ -28,16 +28,16 @@ jobs:
         with:
           push: true
           tags: arthurutopios/learn-ci-cd-vue:${{ steps.generate-uuid.outputs.uuid }}
-      - uses: actions/checkout@v4
-      - name: Update YAML
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          valueFile: "deployments/deployment.yaml"
-          propertyPath: "spec.template.spec.containers.0.image"
-          value: arthurutopios/learn-ci-cd-vue:${{ steps.generate-uuid.outputs.uuid }}
-          branch: main
-          commitUserName: Arthur
-          commitUserEmail: arthur@utopios.solutions
-          createPR: 'false'
-          message: "Update Image Version to ${{ steps.generate-uuid.outputs.uuid }}"
-          token: ${{ secrets.TOKEN }}
+      # - uses: actions/checkout@v4
+      # - name: Update YAML
+      #   uses: fjogeleit/yaml-update-action@main
+      #   with:
+      #     valueFile: "deployments/deployment.yaml"
+      #     propertyPath: "spec.template.spec.containers.0.image"
+      #     value: arthurutopios/learn-ci-cd-vue:${{ steps.generate-uuid.outputs.uuid }}
+      #     branch: main
+      #     commitUserName: Arthur
+      #     commitUserEmail: arthur@utopios.solutions
+      #     createPR: 'false'
+      #     message: "Update Image Version to ${{ steps.generate-uuid.outputs.uuid }}"
+      #     token: ${{ secrets.TOKEN }}
